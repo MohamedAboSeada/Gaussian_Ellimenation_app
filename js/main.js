@@ -57,9 +57,14 @@ function update(){
         let allinputsFilled = true;
         let inputNumbers = [];
         // check for empty cells before solve
+        let count = 0
         inputs.forEach(input => {
             inputNumbers.push(+input.value);
             if(input.value == ''){
+                count+=1;
+                if(count === 1){
+                    input.foucs();
+                }
                 allinputsFilled = false;
                 input.style.borderColor = `red`; 
                 input.style.boxShadow = `0 0 10px rgb(255 0 0 / 20%)`; 
